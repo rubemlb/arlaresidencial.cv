@@ -10,7 +10,7 @@ $captcha;
             </script>";
       exit;
     }
-    $secretKey = "6LdDGQwUAAAAAG5yGJsoNJ2FzNETXNywSekFWyoo";
+    $secretKey = "6Lf7IQ4UAAAAACa6yF7nCLrSmSnsTQ1Fjz4-tfb9";
     $ip = $_SERVER['REMOTE_ADDR'];
     $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretKey."&response=".$captcha."&remoteip=".$ip);
     $responseKeys = json_decode($response,true);
