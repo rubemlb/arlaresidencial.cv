@@ -170,8 +170,11 @@ EOT;
 
 // IMPORTANT: log an error before redirecting
 
-        header("Location: error.php?f=$f");
-        exit;
+        echo "<script type='text/javascript'>
+               alert('O seu pedido de reserva não foi concluida!');
+               location='index.html';
+          </script>";
+        //exit;
     } catch (Exception $e) {
         echo $e->getMessage();
     }
