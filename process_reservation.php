@@ -6,7 +6,7 @@ $captcha;
     if(!$captcha){
       echo "<script type='text/javascript'>
                 alert('Por favor confirme o Captcha!');
-                location='index.html';
+                location='index.html#booking';
             </script>";
       exit;
     }
@@ -55,11 +55,13 @@ if (!$errors && !$missing) {
 
     // set up replacements for decorator plugin
     //residencialmimagui@sapo.cv
-             $replacements = [
+    $replacements = [
         'arlaresidencial@cvtelecom.cv'  =>
-            ['#subject#' => 'Pedido de Reserva Arla Residencial'],
+            ['#subject#' => 'Pedido de Reserva Arla Residencial'
+                '#greeting#' => "Thanks $name, your booking request was received!"],
         $email  =>
-            ['#subject#' => 'Pedido de Reserva Arla Residencial']
+            ['#subject#' => 'Pedido de Reserva Arla Residencial'
+                '#greeting#' => "Thanks $name, your booking request was received!"]
    ];
 
     try {
